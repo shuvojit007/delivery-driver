@@ -25,11 +25,8 @@ class Order {
       orderStatus = jsonMap['order_status'] != null ? OrderStatus.fromJSON(jsonMap['order_status']) :  OrderStatus();
       dateTime = DateTime.parse(jsonMap['updated_at']);
       user = jsonMap['user'] != null ? User.fromJSON(jsonMap['user']) :  User();
-      deliveryAddress =
-          jsonMap['delivery_address'] != null ? Address.fromJSON(jsonMap['delivery_address']) :  Address();
-      foodOrders = jsonMap['food_orders'] != null
-          ? List.from(jsonMap['food_orders']).map((element) => FoodOrder.fromJSON(element)).toList()
-          : [];
+      deliveryAddress = jsonMap['delivery_address'] != null ? Address.fromJSON(jsonMap['delivery_address']) :  Address();
+      foodOrders = jsonMap['food_orders'] != null ? List.from(jsonMap['food_orders']).map((element) => FoodOrder.fromJSON(element)).toList() : [];
     } catch (e) {
       print(e);
     }

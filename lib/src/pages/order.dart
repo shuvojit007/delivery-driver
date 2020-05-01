@@ -363,7 +363,7 @@ class _OrderWidgetState extends StateMVC<OrderWidget> {
                               ),
                             ),
                             if (_con.order.foodOrders != null &&
-                                _con.order.foodOrders.length != null) ...[
+                                _con.order.foodOrders.length > 0) ...[
                               ListView.separated(
                                 padding: EdgeInsets.only(bottom: 50),
                                 scrollDirection: Axis.vertical,
