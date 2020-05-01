@@ -13,11 +13,13 @@ class OrderDetailsController extends ControllerMVC {
   GlobalKey<ScaffoldState> scaffoldKey;
 
   OrderDetailsController() {
-    this.scaffoldKey = new GlobalKey<ScaffoldState>();
+    this.scaffoldKey =  GlobalKey<ScaffoldState>();
   }
 
   void listenForOrder({String id, String message}) async {
     final Stream<Order> stream = await getOrder(id);
+
+
     stream.listen((Order _order) {
       setState(() => order = _order);
     }, onError: (a) {

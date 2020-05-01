@@ -36,6 +36,9 @@ class _OrderWidgetState extends StateMVC<OrderWidget> {
   @override
   void initState() {
     _con.listenForOrder(id: widget.routeArgument.id);
+
+    print(  "LOG : ${_con.order}");
+
     super.initState();
   }
 
@@ -311,7 +314,8 @@ class _OrderWidgetState extends StateMVC<OrderWidget> {
                                 children: <Widget>[
                                   Expanded(
                                     child: Text(
-                                      "",
+
+                                     (_con.order.user!=null &&_con.order.user.phone!=null)?_con.order.user.phone:"not provided",
                                       //_con.order.user.phone,
                                       overflow: TextOverflow.ellipsis,
                                       style: Theme.of(context).textTheme.body2,

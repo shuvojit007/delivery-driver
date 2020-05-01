@@ -35,8 +35,8 @@ class _OrdersWidgetState extends StateMVC<OrdersWidget> {
     return Scaffold(
       key: _con.scaffoldKey,
       appBar: AppBar(
-        leading: new IconButton(
-          icon: new Icon(Icons.sort, color: Theme.of(context).hintColor),
+        leading:  IconButton(
+          icon:  Icon(Icons.sort, color: Theme.of(context).hintColor),
           onPressed: () => widget.parentScaffoldKey.currentState.openDrawer(),
         ),
         automaticallyImplyLeading: false,
@@ -48,7 +48,7 @@ class _OrdersWidgetState extends StateMVC<OrdersWidget> {
           style: Theme.of(context).textTheme.title.merge(TextStyle(letterSpacing: 1.3)),
         ),
         actions: <Widget>[
-          new ShoppingCartButtonWidget(
+           ShoppingCartButtonWidget(
               iconColor: Theme.of(context).hintColor, labelColor: Theme.of(context).accentColor),
         ],
       ),
@@ -76,6 +76,8 @@ class _OrdersWidgetState extends StateMVC<OrdersWidget> {
                             trailing: IconButton(
                               icon: Icon(Icons.arrow_forward),
                               onPressed: () {
+
+                                print(_con.orders.elementAt(index).id);
                                 Navigator.of(context).pushNamed('/OrderDetails',
                                     arguments: RouteArgument(id: _con.orders.elementAt(index).id));
                               },

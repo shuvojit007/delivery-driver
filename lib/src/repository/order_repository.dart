@@ -62,14 +62,16 @@ Future<Stream<Order>> getOrder(orderId) async {
   final String _apiToken = 'api_token=${_user.apiToken}&';
   final String url =
       '${GlobalConfiguration().getString('api_base_url')}orders/$orderId?${_apiToken}with=user;foodOrders;foodOrders.food;orderStatus;deliveryAddress';
-  final client = new http.Client();
+  final client =  http.Client();
   final streamedRest = await client.send(http.Request('get', Uri.parse(url)));
-
+  print("api $url");
   return streamedRest.stream
       .transform(utf8.decoder)
       .transform(json.decoder)
       .map((data) => Helper.getObjectData(data))
       .map((data) {
+
+        print(Order.fromJSON(data));
     return Order.fromJSON(data);
   });
 }
@@ -79,7 +81,7 @@ Future<Stream<Order>> getRecentOrders() async {
   final String _apiToken = 'api_token=${_user.apiToken}&';
   final String url =
       '${GlobalConfiguration().getString('api_base_url')}orders?${_apiToken}with=driver;foodOrders;foodOrders.food;orderStatus;deliveryAddress&search=driver.id:${_user.id}&searchFields=driver.id:=&orderBy=id&sortedBy=desc&limit=4';
-  print(url);
+  print("api $url");
   try {
     final client = new http.Client();
     final streamedRest = await client.send(http.Request('get', Uri.parse(url)));

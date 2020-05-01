@@ -22,11 +22,11 @@ class Order {
       id = jsonMap['id'].toString();
       tax = jsonMap['tax'] != null ? jsonMap['tax'].toDouble() : 0.0;
       hint = jsonMap['hint'].toString();
-      orderStatus = jsonMap['order_status'] != null ? OrderStatus.fromJSON(jsonMap['order_status']) : new OrderStatus();
+      orderStatus = jsonMap['order_status'] != null ? OrderStatus.fromJSON(jsonMap['order_status']) :  OrderStatus();
       dateTime = DateTime.parse(jsonMap['updated_at']);
-      user = jsonMap['user'] != null ? User.fromJSON(jsonMap['user']) : new User();
+      user = jsonMap['user'] != null ? User.fromJSON(jsonMap['user']) :  User();
       deliveryAddress =
-          jsonMap['delivery_address'] != null ? Address.fromJSON(jsonMap['delivery_address']) : new Address();
+          jsonMap['delivery_address'] != null ? Address.fromJSON(jsonMap['delivery_address']) :  Address();
       foodOrders = jsonMap['food_orders'] != null
           ? List.from(jsonMap['food_orders']).map((element) => FoodOrder.fromJSON(element)).toList()
           : [];
@@ -53,4 +53,11 @@ class Order {
     map["order_status_id"] = 5;
     return map;
   }
+
+  @override
+  String toString() {
+    return 'Order{id: $id, foodOrders: $foodOrders, orderStatus: $orderStatus, tax: $tax, hint: $hint, dateTime: $dateTime, user: $user, payment: $payment, deliveryAddress: $deliveryAddress}';
+  }
+
+
 }

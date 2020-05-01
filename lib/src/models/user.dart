@@ -23,7 +23,8 @@ class User {
     apiToken = jsonMap['api_token'];
     deviceToken = jsonMap['device_token'];
     try {
-      phone = jsonMap['custom_fields']['phone']['view'];
+      phone = jsonMap['phone'];
+     // jsonMap['custom_fields']['phone']['view'];
     } catch (e) {
       phone = "";
     }
@@ -41,7 +42,7 @@ class User {
   }
 
   Map toMap() {
-    var map = new Map<String, dynamic>();
+    var map =  Map<String, dynamic>();
     map["id"] = id;
     map["email"] = email;
     map["name"] = name;
@@ -53,4 +54,11 @@ class User {
     map["bio"] = bio;
     return map;
   }
+
+  @override
+  String toString() {
+    return 'User{id: $id, name: $name, email: $email, password: $password, apiToken: $apiToken, deviceToken: $deviceToken, phone: $phone, address: $address, bio: $bio, image: $image}';
+  }
+
+
 }
