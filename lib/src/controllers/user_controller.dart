@@ -1,4 +1,4 @@
-import 'package:firebase_messaging/firebase_messaging.dart';
+//import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 
@@ -11,15 +11,16 @@ class UserController extends ControllerMVC {
   bool hidePassword = true;
   GlobalKey<FormState> loginFormKey;
   GlobalKey<ScaffoldState> scaffoldKey;
-  FirebaseMessaging _firebaseMessaging;
+ // FirebaseMessaging _firebaseMessaging;
 
   UserController() {
     loginFormKey = new GlobalKey<FormState>();
     this.scaffoldKey = new GlobalKey<ScaffoldState>();
-    _firebaseMessaging = FirebaseMessaging();
-    _firebaseMessaging.getToken().then((String _deviceToken) {
-      user.deviceToken = _deviceToken;
-    });
+
+   // _firebaseMessaging = FirebaseMessaging();
+//    _firebaseMessaging.getToken().then((String _deviceToken) {
+//      user.deviceToken = _deviceToken;
+//    });
   }
 
   void login() async {

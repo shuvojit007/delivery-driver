@@ -471,7 +471,7 @@ class _OrderWidgetState extends StateMVC<OrderWidget> {
                                                   actions: <Widget>[
                                                     // usually buttons at the bottom of the dialog
                                                     FlatButton(
-                                                      child: new Text(S
+                                                      child:  Text(S
                                                           .of(context)
                                                           .confirm),
                                                       onPressed: () {
@@ -482,7 +482,7 @@ class _OrderWidgetState extends StateMVC<OrderWidget> {
                                                       },
                                                     ),
                                                     FlatButton(
-                                                      child: new Text(S
+                                                      child:  Text(S
                                                           .of(context)
                                                           .dismiss),
                                                       onPressed: () {

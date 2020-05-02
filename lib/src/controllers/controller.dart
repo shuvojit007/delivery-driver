@@ -1,4 +1,4 @@
-import 'package:firebase_messaging/firebase_messaging.dart';
+//import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
@@ -30,33 +30,33 @@ class Controller extends ControllerMVC {
       });
     });
 
-    final FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
-    _firebaseMessaging.configure(
-      onMessage: (Map<String, dynamic> message) async {
-        showDialog(
-          context: scaffoldKey.currentContext,
-          builder: (context) => AlertDialog(
-            content: ListTile(
-              title: Text(message['notification']['title']),
-              subtitle: Text(message['notification']['body']),
-            ),
-            actions: <Widget>[
-              FlatButton(
-                child: Text('Ok'),
-                onPressed: () => Navigator.of(context).pop(),
-              ),
-            ],
-          ),
-        );
-        print("onMessage: $message");
-      },
-      onLaunch: (Map<String, dynamic> message) async {
-        print("onLaunch: $message");
-      },
-      onResume: (Map<String, dynamic> message) async {
-        print("onResume: $message");
-      },
-    );
+//    final FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
+//    _firebaseMessaging.configure(
+//      onMessage: (Map<String, dynamic> message) async {
+//        showDialog(
+//          context: scaffoldKey.currentContext,
+//          builder: (context) => AlertDialog(
+//            content: ListTile(
+//              title: Text(message['notification']['title']),
+//              subtitle: Text(message['notification']['body']),
+//            ),
+//            actions: <Widget>[
+//              FlatButton(
+//                child: Text('Ok'),
+//                onPressed: () => Navigator.of(context).pop(),
+//              ),
+//            ],
+//          ),
+//        );
+//        print("onMessage: $message");
+//      },
+//      onLaunch: (Map<String, dynamic> message) async {
+//        print("onLaunch: $message");
+//      },
+//      onResume: (Map<String, dynamic> message) async {
+//        print("onResume: $message");
+//      },
+//    );
   }
 
 //  Future<dynamic> myBackgroundMessageHandler(Map<String, dynamic> message) {

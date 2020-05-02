@@ -1,6 +1,4 @@
 import 'package:dynamic_theme/dynamic_theme.dart';
-import 'package:firebase_analytics/firebase_analytics.dart';
-import 'package:firebase_analytics/observer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:global_configuration/global_configuration.dart';
@@ -10,7 +8,7 @@ import 'generated/i18n.dart';
 import 'route_generator.dart';
 import 'src/repository/settings_repository.dart' as settingRepo;
 
-FirebaseAnalytics analytics = FirebaseAnalytics();
+//FirebaseAnalytics analytics = FirebaseAnalytics();
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -97,7 +95,7 @@ class MyApp extends StatelessWidget {
                   supportedLocales: S.delegate.supportedLocales,
                   localeListResolutionCallback: S.delegate.listResolution(fallback: const Locale('en', '')),
                   navigatorObservers: [
-                    FirebaseAnalyticsObserver(analytics: analytics),
+                   // FirebaseAnalyticsObserver(analytics: analytics),
                   ],
                   theme: theme,
                 );
