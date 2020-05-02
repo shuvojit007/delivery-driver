@@ -38,7 +38,7 @@ class User {
     } catch (e) {
       bio = "";
     }
-    image = jsonMap['media'] != null ? Media.fromJSON(jsonMap['media'][0]) : null;
+    image = jsonMap['media'] != null && jsonMap['media'].length > 0 ? Media.fromJSON(jsonMap['media'][0]) : null;
   }
 
   Map toMap() {
