@@ -8,6 +8,7 @@ import 'generated/i18n.dart';
 import 'route_generator.dart';
 import 'src/repository/settings_repository.dart' as settingRepo;
 
+//todo firebase
 //FirebaseAnalytics analytics = FirebaseAnalytics();
 
 Future<void> main() async {
@@ -17,6 +18,7 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
+  //todo firebase 
   // This widget is the root of your application.
 //  /// Supply 'the Controller' for this application.
 //  MyApp({Key key}) : super(con: Controller(), key: key);

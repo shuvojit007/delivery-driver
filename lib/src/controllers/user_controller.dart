@@ -17,6 +17,9 @@ class UserController extends ControllerMVC {
     loginFormKey = new GlobalKey<FormState>();
     this.scaffoldKey = new GlobalKey<ScaffoldState>();
 
+
+    //todo firebase
+
    // _firebaseMessaging = FirebaseMessaging();
 //    _firebaseMessaging.getToken().then((String _deviceToken) {
 //      user.deviceToken = _deviceToken;
